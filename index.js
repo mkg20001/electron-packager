@@ -49,6 +49,7 @@ function validateList (list, supported, name) {
 }
 
 function getNameAndVersion (opts, dir, cb) {
+  if (dir.startsWith(".")) dir=dir.replace(".",process.env.PWD||path.join(__dirname,"..",".."));
   var pkg;
   try {
     pkg = require(path.join(dir, 'package.json'))
