@@ -49,7 +49,12 @@ function validateList (list, supported, name) {
 }
 
 function getNameAndVersion (opts, dir, cb) {
-  var pkg = require(path.join(dir, 'package.json'))
+  var pkg;
+  try {
+    pkg = require(path.join(dir, 'package.json'))
+  } catch(e) {
+    pkg=null;
+  }
   if (!pkg) return cb(Error(`no package.json file found in ${dir}`))
 
   // Name and version provided, no need to infer
