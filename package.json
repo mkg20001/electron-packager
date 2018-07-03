@@ -28,7 +28,8 @@
     "plist": "^1.1.0",
     "rcedit": "^0.5.1",
     "resolve": "^1.1.6",
-    "run-series": "^1.1.1"
+    "run-series": "^1.1.1",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "buffer-equal": "^1.0.0",
@@ -51,7 +52,9 @@
   "scripts": {
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "rimraf test/work",
-    "test": "eslint . && nyc --cache tape test | tap-spec"
+    "test": "eslint . && nyc --cache tape test | tap-spec",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "directories": {
     "test": "test"
@@ -67,5 +70,6 @@
         "error"
       ]
     }
-  }
+  },
+  "snyk": true
 }
