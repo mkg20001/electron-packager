@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/electron-userland/electron-packager",
   "dependencies": {
-    "asar": "^0.12.0",
+    "asar": "^3.0.0",
     "debug": "^2.2.0",
-    "electron-download": "^2.0.0",
+    "electron-download": "^3.0.0",
     "electron-osx-sign": "^0.3.0",
     "extract-zip": "^1.0.3",
     "fs-extra": "^0.30.0",
